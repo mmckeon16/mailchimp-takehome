@@ -9,21 +9,15 @@ import Typography from "@mui/material/Typography";
 
 import TabPanel from "../TabPanel/TabPanel";
 
-const StyledTab = styled(props => <Tab disableRipple {...props} />)(
-  ({ theme }) => ({
-    textTransform: "none",
-    // fontWeight: theme.typography.fontWeightRegular,
-    // fontSize: theme.typography.pxToRem(15),
-    // marginRight: theme.spacing(1),
-    // color: "rgba(255, 255, 255, 0.7)",
-    "&.Mui-selected": {
-      color: "primary.main"
-    },
-    "&.Mui-focusVisible": {
-      color: "#163E46"
-    }
-  })
-);
+const StyledTab = styled(props => <Tab disableRipple {...props} />)(() => ({
+  textTransform: "none",
+  "&.Mui-selected": {
+    color: "primary.main"
+  },
+  "&.Mui-focusVisible": {
+    color: "#163E46"
+  }
+}));
 
 export default function Tabs() {
   const [value, setValue] = React.useState(0);
@@ -41,7 +35,7 @@ export default function Tabs() {
         onChange={handleChange}
         variant="scrollable"
         value={value}
-        aria-label="Tabs where selection follows focus"
+        aria-label="Tabs of different locations for this Mailchimp project"
         sx={{
           "& .Mui-focusVisible": {
             border: theme => `1px solid ${theme.palette.primary.main}`
@@ -50,11 +44,11 @@ export default function Tabs() {
         }}
         selectionFollowsFocus
       >
-        <StyledTab label="Oakland" />
-        <StyledTab label="Atlanta" />
-        <StyledTab label="Brooklyn" />
-        <StyledTab label="Vancouver" />
-        <StyledTab label="Santa Monica" />
+        <StyledTab label="Oakland" id="oakland" />
+        <StyledTab label="Atlanta" id="atlanta" />
+        <StyledTab label="Brooklyn" id="brooklyn" />
+        <StyledTab label="Vancouver" id="vancouver" />
+        <StyledTab label="Santa Monica" id="santa-monica" />
       </MuiTabs>
       {/* TODO make below into component */}
       <TabPanel value={value} index={0}>
