@@ -85,7 +85,8 @@ I decided not to use this experimental version to show my implementation for acc
 
 - ~~Unit tests with React Testing Library~~
 - WDIO Tests for each view: at least axe scan
-- Fix aria labels on tabs
+- ~~Fix aria labels on tabs~~
 - improve styling on the Tab focus state: need to have border be across whole component
 - separate the tab panel content into a separate component
-- change non-focused color of tabs to be accurate for the prompt
+- ~~change non-focused color of tabs to be accurate for the prompt~~
+- ~~add in skip-to-content button before the tabs~~

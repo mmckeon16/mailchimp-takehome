@@ -24,6 +24,17 @@ describe("TabPanel tests", () => {
     expect(tabPanelElement).toBeNull();
   });
 
+  test("renders TabPanel with value prop of 0", () => {
+    render(
+      <TabPanel value={0} index={0} label="testLabel">
+        test123
+      </TabPanel>
+    );
+    const tabPanelElement = screen.queryByText(/test123/);
+
+    expect(tabPanelElement).toBeInTheDocument();
+  });
+
   test("renders no TabPanel with no index prop", () => {
     render(
       <TabPanel value={1} label="testLabel">
