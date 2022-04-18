@@ -1,27 +1,55 @@
 import { render, screen } from "@testing-library/react";
 import TabPanel from "./TabPanel";
 
-test("renders TabPanel test child text", () => {
-  render(
-    <TabPanel value={1} index={1}>
-      test123
-    </TabPanel>
-  );
-  const tabPanelElement = screen.queryByText(/test123/);
+describe("TabPanel tests", () => {
+  test("renders TabPanel test child text", () => {
+    render(
+      <TabPanel value={1} index={1} label="testLabel">
+        test123
+      </TabPanel>
+    );
+    const tabPanelElement = screen.queryByText(/test123/);
 
-  expect(tabPanelElement).toBeInTheDocument();
-});
+    expect(tabPanelElement).toBeInTheDocument();
+  });
 
-test("renders hidden TabPanel with no value prop", () => {
-  render(<TabPanel index={1}>test123</TabPanel>);
-  const tabPanelElement = screen.queryByText(/test123/);
+  test("renders no TabPanel with no value prop", () => {
+    render(
+      <TabPanel index={1} label="testLabel">
+        test123
+      </TabPanel>
+    );
+    const tabPanelElement = screen.queryByText(/test123/);
 
-  expect(tabPanelElement).toBeNull();
-});
+    expect(tabPanelElement).toBeNull();
+  });
 
-test("renders hidden TabPanel with no index prop", () => {
-  render(<TabPanel value={1}>test123</TabPanel>);
-  const tabPanelElement = screen.queryByText(/test123/);
+  test("renders no TabPanel with no index prop", () => {
+    render(
+      <TabPanel value={1} label="testLabel">
+        test123
+      </TabPanel>
+    );
+    const tabPanelElement = screen.queryByText(/test123/);
 
-  expect(tabPanelElement).toBeNull();
+    expect(tabPanelElement).toBeNull();
+  });
+
+  test("renders no TabPanel with no index or value prop", () => {
+    render(<TabPanel>test123</TabPanel>);
+    const tabPanelElement = screen.queryByText(/test123/);
+
+    expect(tabPanelElement).toBeNull();
+  });
+
+  test("renders no TabPanel with no label prop", () => {
+    render(
+      <TabPanel value={1} index={1}>
+        test123
+      </TabPanel>
+    );
+    const tabPanelElement = screen.queryByText(/test123/);
+
+    expect(tabPanelElement).toBeNull();
+  });
 });
