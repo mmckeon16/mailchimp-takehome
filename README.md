@@ -76,3 +76,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 This project uses [Material UI](https://mui.com/). Using Material UI at my current job, I've seen it's many improvements for accessibility. For example, their current [Tabs](https://mui.com/material-ui/react-tabs/) component currently has an [experimental version](https://mui.com/material-ui/react-tabs/#experimental-api) which automatically inject props for accessible tabs according to the [WAI-ARIA authoring practices](https://www.w3.org/TR/wai-aria-practices/#tabpanel).
 
 I decided not to use this experimental version to show my implementation for accessible tabs, and in typical company, it is not practical to use an experimental version for a production-facing product.
+
+### Clarifications
+
+- Should the keyboard left/right while focused on the tabs section activate the current focused tab? This is a simple as removing or adding the `selectionFollowsFocus` prop in the MuiTabs component of the [Tabs](./src/components/Tabs/Tabs.js) component in this project.
