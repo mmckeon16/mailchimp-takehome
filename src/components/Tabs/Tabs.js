@@ -34,7 +34,7 @@ export default function Tabs() {
   return (
     <Box
       sx={{
-        width: "100%"
+        width: "100vw"
       }}
     >
       <MuiTabs
@@ -43,21 +43,18 @@ export default function Tabs() {
         value={value}
         aria-label="Tabs where selection follows focus"
         sx={{
-          width: "100%",
-          borderBottom: "1px solid #e8e8e8",
-          "& .MuiTabs-indicator": {
-            backgroundColor: "primary.main"
-          },
           "& .Mui-focusVisible": {
-            borderColor: "primary.main",
-            border: 1
-          }
+            border: theme => `1px solid ${theme.palette.primary.main}`
+          },
+          borderBottom: "1px solid #e8e8e8"
         }}
         selectionFollowsFocus
       >
-        <StyledTab label="Item One" />
-        <StyledTab label="Item Two" />
-        <StyledTab label="Item Three" />
+        <StyledTab label="Oakland" />
+        <StyledTab label="Atlanta" />
+        <StyledTab label="Brooklyn" />
+        <StyledTab label="Vancouver" />
+        <StyledTab label="Santa Monica" />
       </MuiTabs>
       {/* TODO make below into component */}
       <TabPanel value={value} index={0}>
