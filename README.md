@@ -29,9 +29,13 @@ You may also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npx wdio`
+### `npm run wdio`
 
-Launches a chrome browser and runs all tests in the `e2e` directory. Configuration for these tests can be found in the `wdio.conf.js` file.
+Launches a chrome browser and runs all tests in the `e2e` directory (besides the axe scan). Configuration for these tests can be found in the `wdio.conf.js` file. **Note** to run these tests, the application needs to be running on `localhost:3000`. You can do this by running `npm start`, and then run this in a separate terminal.
+
+### `npm run wdio:axe`
+
+Launches a chrome browser and runs the `axe.e2e.js` test. Right now, the results are just logged to the console. **Note** to run these tests, the application needs to be running on `localhost:3000`. You can do this by running `npm start`, and then run this in a separate terminal.
 
 ### `npm run build`
 
@@ -55,7 +59,7 @@ I decided not to use this experimental version to show my implementation for acc
 
 #### WDIO
 
-Webdriverio is a common used framework for automated browser testing.
+Webdriverio is a common used framework for automated browser testing. The only accessibility error is that there is no level 1 Heading on the page. This can be viewed in the console when the the `npx wdio:axe` is run.
 
 ### Clarifications
 
@@ -64,10 +68,15 @@ Webdriverio is a common used framework for automated browser testing.
 ### TODO
 
 - ~~Unit tests with React Testing Library~~
-- WDIO Tests for each view: at least axe scan
+- ~~WDIO Tests for each view: at least axe scan~~
 - ~~Fix aria labels on tabs~~
 - improve styling on the Tab focus state: need to have border be across whole component
 - separate the tab panel content into a separate component
 - ~~change non-focused color of tabs to be accurate for the prompt~~
 - ~~add in skip-to-content button before the tabs~~
-- clean up README
+- ~~clean up README~~
+
+### Improvements
+
+- Better WDIO integration
+- Better browser test running setup - probably using docker
