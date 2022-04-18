@@ -80,3 +80,11 @@ I decided not to use this experimental version to show my implementation for acc
 ### Clarifications
 
 - Should the keyboard left/right while focused on the tabs section activate the current focused tab? This is a simple as removing or adding the `selectionFollowsFocus` prop in the MuiTabs component of the [Tabs](./src/components/Tabs/Tabs.js) component in this project.
+
+### TODO
+
+- Unit tests with React Testing Library
+- WDIO Tests for each view: at least axe scan
+- improve styling on the Tab focus state: need to have border be across whole component
+- separate the tab panel content into a separate component
+- change non-focused color of tabs to be accurate for the prompt
