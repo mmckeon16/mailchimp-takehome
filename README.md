@@ -27,7 +27,6 @@ You may also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run wdio`
 
@@ -63,7 +62,7 @@ Webdriverio is a common used framework for automated browser testing. The only a
 
 ### Clarifications
 
-- Should the keyboard left/right while focused on the tabs section activate the current focused tab? This is a simple as removing or adding the `selectionFollowsFocus` prop in the MuiTabs component of the [Tabs](./src/components/Tabs/Tabs.js) component in this project.
+- Should the keyboard left/right while focused on the tabs section activate the current focused tab? This is a simple as removing or adding the `selectionFollowsFocus` prop in the MuiTabs component of the [Tabs](https://github.com/mmckeon16/mailchimp-takehome/blob/main/src/components/Tabs/Tabs.js#L47) component in this project.
 
 ### TODO
 
