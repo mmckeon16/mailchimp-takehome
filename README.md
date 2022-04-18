@@ -68,3 +68,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## MailChimp Project Decisions
+
+### [Material UI](https://mui.com/)
+
+This project uses [Material UI](https://mui.com/). Using Material UI at my current job, I've seen it's many improvements for accessibility. For example, their current [Tabs](https://mui.com/material-ui/react-tabs/) component currently has an [experimental version](https://mui.com/material-ui/react-tabs/#experimental-api) which automatically inject props for accessible tabs according to the [WAI-ARIA authoring practices](https://www.w3.org/TR/wai-aria-practices/#tabpanel).
+
+I decided not to use this experimental version to show my implementation for accessible tabs, and in typical company, it is not practical to use an experimental version for a production-facing product.
