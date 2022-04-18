@@ -2,6 +2,7 @@ import * as React from "react";
 import PropTypes from "prop-types";
 
 import Box from "@mui/material/Box";
+import Fade from "@mui/material/Fade";
 
 export default function TabPanel(props) {
   const { children, value, index, label, ...other } = props;
@@ -16,7 +17,16 @@ export default function TabPanel(props) {
       aria-labelledby={label}
       {...other}
     >
-      {!hiddenBool && <Box sx={{ p: 3 }}>{children}</Box>}
+      {!hiddenBool && (
+        <Box sx={{ p: 3 }}>
+          <Fade
+            easing={{ enter: "cubic-bezier(0,-1.55,.61,1.58)", exit: "linear" }}
+            in={!hiddenBool}
+          >
+            {children}
+          </Fade>
+        </Box>
+      )}
     </div>
   );
 }
