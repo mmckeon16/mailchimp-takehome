@@ -17,7 +17,12 @@ const StyledTab = styled(props => <Tab disableRipple {...props} />)(() => ({
   "&.Mui-focusVisible": {
     color: "#163E46"
   },
-  color: "secondary.main"
+  color: "secondary.main",
+  width: "auto",
+  paddingLeft: "8px",
+  paddingRight: "8px",
+  marginRight: "20px",
+  minWidth: "10px"
 }));
 
 export default function Tabs() {
